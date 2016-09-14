@@ -1,0 +1,17 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    @if (IsSectionDefined("ImageUltimateCss"))
+    {
+        @RenderSection("ImageUltimateCss")
+    }
+    @if (IsSectionDefined("ImageUltimateJs"))
+    {
+        @RenderSection("ImageUltimateJs")
+    }
+</head>
+<body style="margin: 20px;">
+    @RenderBody()
+</body>
+</html>

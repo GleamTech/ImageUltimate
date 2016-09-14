@@ -1,0 +1,35 @@
+﻿@using GleamTech.ExamplesCore
+@using GleamTech.Web.Mvc
+@{
+    var exampleExplorer = new ExampleExplorer
+    {
+        FullViewport = true,
+        NavigationTitle = "ImageUltimate Examples",
+        Examples = new ExampleBase[]
+        {
+            new Example
+            {
+                Title = "Overview",
+                Url = "home/Overview",
+                SourceFiles = new[] {"Views/Home/Overview.cshtml", "Controllers/HomeController.Overview.cs"},
+                DescriptionFile = "Descriptions/Overview.html"
+            }
+        },
+        ExampleProjectName = "ASP.NET MVC (C#)",
+        ExampleProjects = ExamplesCoreConfiguration.LoadExampleProjects(Server.MapPath("~/App_Data/ExampleProjects.json"))
+    };
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>ImageUltimate Examples - ASP.NET MVC (C#)</title>
+
+    @Html.RenderCss(exampleExplorer)
+    @Html.RenderJs(exampleExplorer)
+
+</head>
+<body>
+    @Html.RenderControl(exampleExplorer)
+</body>
+</html>

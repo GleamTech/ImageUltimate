@@ -898,7 +898,7 @@
             Rotates the current image by the given angle. The command is added to the chain and not executed until the actual processing is done. 
             </summary>
             <param name="angle">The angle in degrees to rotate the image by. A positive degree will cause a clockwise rotation and a negative degree will cause a counter-clockwise rotation. Angles of 90, 180, or 270 degrees will use a special algorithm for higher performance.</param>
-            <param name="backgroundColor">The background color for the rotated image. Default color is white. If the rotated image is not rectangular (ie. angle is not 90, 180, or 270 degrees), it will be padded with the background color to get a rectangular image.</param>
+            <param name="backgroundColor">The background color for the rotated image. Default color is transparent. If the rotated image is not rectangular (ie. angle is not 90, 180, or 270 degrees), it will be padded with the background color to get a rectangular image.</param>
             <param name="transformQuality">The interpolation algorithm to use while transforming.</param>
             <returns>The same instance of this class.</returns>
         </member>

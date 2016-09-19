@@ -16,6 +16,13 @@ namespace GleamTech.ImageUltimateExamples.WebForms.CS
                     Url = "Overview.aspx",
                     SourceFiles = new[] { "Overview.aspx", "Overview.aspx.cs"},
                     DescriptionFile = "Descriptions/Overview.html"
+                },
+                new Example
+                {
+                    Title = "Image Processing",
+                    Url = "Processing.aspx",
+                    SourceFiles = new[] { "Processing.aspx", "Processing.aspx.cs"},
+                    DescriptionFile = "Descriptions/Processing.html"
                 }
             };
 

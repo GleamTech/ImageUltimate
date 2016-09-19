@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Web.UI;
 using GleamTech.ImageUltimate;
@@ -24,27 +25,42 @@ namespace GleamTech.ImageUltimateExamples.WebForms.CS
                 ImageData.Add("DpiX", imageInfo.DpiX);
                 ImageData.Add("DpiY", imageInfo.DpiY);
                 ImageData.Add("PixelFormat", imageInfo.PixelFormatInfo.Description);
-                ImageData.Add("&#10551; ColorModel", imageInfo.PixelFormatInfo.ColorModel);
-                ImageData.Add("&#10551; BitDepth", imageInfo.PixelFormatInfo.BitDepth);
-                ImageData.Add("&#10551; HasAlpha", imageInfo.PixelFormatInfo.HasAlpha);
-                ImageData.Add("&#10551; IsIndexed", imageInfo.PixelFormatInfo.IsIndexed);
-                ImageData.Add("&#10551; IsRgb", imageInfo.PixelFormatInfo.IsRgb);
-                ImageData.Add("&#10551; IsExtended", imageInfo.PixelFormatInfo.IsExtended);
-                ImageData.Add("&#10551; ChannelCount", imageInfo.PixelFormatInfo.ChannelCount);
-                ImageData.Add("&#10551; MaxChannelValue", imageInfo.PixelFormatInfo.MaxChannelValue);
+                ImageData.Add("⤷ ColorModel", imageInfo.PixelFormatInfo.ColorModel);
+                ImageData.Add("⤷ BitDepth", imageInfo.PixelFormatInfo.BitDepth);
+                ImageData.Add("⤷ HasAlpha", imageInfo.PixelFormatInfo.HasAlpha);
+                ImageData.Add("⤷ IsIndexed", imageInfo.PixelFormatInfo.IsIndexed);
+                ImageData.Add("⤷ IsRgb", imageInfo.PixelFormatInfo.IsRgb);
+                ImageData.Add("⤷ IsExtended", imageInfo.PixelFormatInfo.IsExtended);
+                ImageData.Add("⤷ ChannelCount", imageInfo.PixelFormatInfo.ChannelCount);
+                ImageData.Add("⤷ MaxChannelValue", imageInfo.PixelFormatInfo.MaxChannelValue);
 
                 foreach (var entry in imageInfo.ExifDictionary)
-                    ImageExifMetadata.Add(entry.Key.ToString(), Tuple.Create(entry.ValueString, entry.Description));
+                    ImageExifMetadata.Add(entry.Key.ToString(), Tuple.Create(GetStringValue(entry), entry.Description));
 
                 if (ImageExifMetadata.Count == 0)
                     ImageExifMetadata.Add("", Tuple.Create("", ""));
 
                 foreach (var entry in imageInfo.IptcDictionary)
-                    ImageIptcMetadata.Add(entry.Key.ToString(), Tuple.Create(entry.ValueString, entry.Description));
+                    ImageIptcMetadata.Add(entry.Key.ToString(), Tuple.Create(GetStringValue(entry), entry.Description));
 
                 if (ImageIptcMetadata.Count == 0)
                     ImageIptcMetadata.Add("", Tuple.Create("", ""));
             }
+        }
+
+        private static string GetStringValue<TKey>(MetadataEntry<TKey> entry)
+        {
+            if (entry.Value is string)
+                return entry.ValueString;
+
+            var valueType = entry.Value.GetType();
+            if (valueType.IsArray)
+                return string.Format("{0} array with length {1}", valueType.GetElementType(), ((ICollection)entry.Value).Count);
+
+            if (entry.Values.Length > 1)
+                return string.Format("{0} array with length {1}", entry.Values[0].GetType(), entry.Values.Length);
+
+            return entry.ValueString;
         }
     }
 }

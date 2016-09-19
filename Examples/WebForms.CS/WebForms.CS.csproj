@@ -57,13 +57,16 @@
     </Reference>
     <Reference Include="System"/>
     <Reference Include="System.Core"/>
+    <Reference Include="System.Drawing"/>
     <Reference Include="System.Web"/>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Default.aspx"/>
     <Content Include="Descriptions\Overview.html"/>
+    <Content Include="Processing.aspx"/>
     <Content Include="Overview.aspx"/>
     <Content Include="Global.asax"/>
+    <Content Include="Resources\Table.css"/>
     <Content Include="Web.config"/>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -79,6 +82,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Processing.aspx.cs">
+      <DependentUpon>Processing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Processing.aspx.designer.cs">
+      <DependentUpon>Processing.aspx</DependentUpon>
     </Compile>
     <Compile Include="Overview.aspx.cs">
       <DependentUpon>Overview.aspx</DependentUpon>

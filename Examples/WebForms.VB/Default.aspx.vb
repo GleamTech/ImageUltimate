@@ -11,6 +11,12 @@ Public Class DefaultPage
 		        .Url = "Overview.aspx", 
 		        .SourceFiles = New String() {"Overview.aspx", "Overview.aspx.vb"}, 
 		        .DescriptionFile = "Descriptions/Overview.html" 
+	        },
+            New Example() With {
+		        .Title = "Image Processing", 
+		        .Url = "Processing.aspx", 
+		        .SourceFiles = New String() {"Processing.aspx", "Processing.aspx.vb"}, 
+		        .DescriptionFile = "Descriptions/Processing.html" 
 	        }
         }
 

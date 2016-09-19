@@ -23,17 +23,17 @@ Namespace Controllers
                 model.ImageData.Add("DpiX", imageInfo.DpiX)
                 model.ImageData.Add("DpiY", imageInfo.DpiY)
                 model.ImageData.Add("PixelFormat", imageInfo.PixelFormatInfo.Description)
-                model.ImageData.Add("&#10551; ColorModel", imageInfo.PixelFormatInfo.ColorModel)
-                model.ImageData.Add("&#10551; BitDepth", imageInfo.PixelFormatInfo.BitDepth)
-                model.ImageData.Add("&#10551; HasAlpha", imageInfo.PixelFormatInfo.HasAlpha)
-                model.ImageData.Add("&#10551; IsIndexed", imageInfo.PixelFormatInfo.IsIndexed)
-                model.ImageData.Add("&#10551; IsRgb", imageInfo.PixelFormatInfo.IsRgb)
-                model.ImageData.Add("&#10551; IsExtended", imageInfo.PixelFormatInfo.IsExtended)
-                model.ImageData.Add("&#10551; ChannelCount", imageInfo.PixelFormatInfo.ChannelCount)
-                model.ImageData.Add("&#10551; MaxChannelValue", imageInfo.PixelFormatInfo.MaxChannelValue)
+                model.ImageData.Add("⤷ ColorModel", imageInfo.PixelFormatInfo.ColorModel)
+                model.ImageData.Add("⤷ BitDepth", imageInfo.PixelFormatInfo.BitDepth)
+                model.ImageData.Add("⤷ HasAlpha", imageInfo.PixelFormatInfo.HasAlpha)
+                model.ImageData.Add("⤷ IsIndexed", imageInfo.PixelFormatInfo.IsIndexed)
+                model.ImageData.Add("⤷ IsRgb", imageInfo.PixelFormatInfo.IsRgb)
+                model.ImageData.Add("⤷ IsExtended", imageInfo.PixelFormatInfo.IsExtended)
+                model.ImageData.Add("⤷ ChannelCount", imageInfo.PixelFormatInfo.ChannelCount)
+                model.ImageData.Add("⤷ MaxChannelValue", imageInfo.PixelFormatInfo.MaxChannelValue)
 
                 For Each entry In imageInfo.ExifDictionary
-                    model.ImageExifMetadata.Add(entry.Key.ToString(), Tuple.Create(entry.ValueString, entry.Description))
+                    model.ImageExifMetadata.Add(entry.Key.ToString(), Tuple.Create(GetStringValue(entry), entry.Description))
                 Next
 
                 If model.ImageExifMetadata.Count = 0 Then
@@ -41,7 +41,7 @@ Namespace Controllers
                 End If
 
                 For Each entry In imageInfo.IptcDictionary
-                    model.ImageIptcMetadata.Add(entry.Key.ToString(), Tuple.Create(entry.ValueString, entry.Description))
+                    model.ImageIptcMetadata.Add(entry.Key.ToString(), Tuple.Create(GetStringValue(entry), entry.Description))
                 Next
 
                 If model.ImageIptcMetadata.Count = 0 Then
@@ -51,5 +51,23 @@ Namespace Controllers
 
             Return View(model)
         End Function
+
+        Private Shared Function GetStringValue(Of TKey)(entry As MetadataEntry(Of TKey)) As String
+	        If TypeOf entry.Value Is String Then
+		        Return entry.ValueString
+	        End If
+
+	        Dim valueType = entry.Value.GetType()
+	        If valueType.IsArray Then
+		        Return String.Format("{0} array with length {1}", valueType.GetElementType(), DirectCast(entry.Value, ICollection).Count)
+	        End If
+
+	        If entry.Values.Length > 1 Then
+		        Return String.Format("{0} array with length {1}", entry.Values(0).GetType(), entry.Values.Length)
+	        End If
+
+	        Return entry.ValueString
+        End Function
+
     End Class
 End Namespace

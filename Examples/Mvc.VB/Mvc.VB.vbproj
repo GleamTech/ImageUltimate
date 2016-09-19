@@ -63,6 +63,7 @@
     <Reference Include="GleamTech.ImageUltimate">
       <HintPath>..\..\Bin\GleamTech.ImageUltimate.dll</HintPath>
     </Reference>
+    <Reference Include="System.Drawing"/>
     <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL"/>
     <Reference Include="System.Web.WebPages, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL"/>
     <Reference Include="System"/>
@@ -97,12 +98,14 @@
     <Import Include="System.Web.UI.HtmlControls"/>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\HomeController.Processing.vb"/>
     <Compile Include="Controllers\HomeController.Overview.vb"/>
     <Compile Include="Controllers\HomeController.vb"/>
     <Compile Include="Global.asax.vb">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\OverviewViewModel.vb"/>
+    <Compile Include="Models\ProcessingViewModel.vb"/>
     <Compile Include="My Project\AssemblyInfo.vb"/>
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -138,8 +141,10 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <Content Include="Descriptions\Overview.html"/>
+    <Content Include="Resources\Table.css"/>
     <Content Include="Views\Home\Index.vbhtml"/>
     <Content Include="Views\Home\Overview.vbhtml"/>
+    <Content Include="Views\Home\Processing.vbhtml"/>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax"/>

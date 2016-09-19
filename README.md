@@ -39,7 +39,7 @@ ImageUltimate is the fastest and easiest ASP.NET Image Resizer which supports bo
 
     *   Eps (Encapsulated PostScript) - TIFF Preview only
 
-    *   Psd (Photoshop Document) and Psb Photoshop Large Document Format)
+    *   Psd (Photoshop Document) and Psb (Photoshop Large Document Format)
 
     *   Raw (Digital Camera Image Formats):
 

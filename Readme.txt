@@ -1,4 +1,4 @@
-ImageUltimate v1.8.6 - ASP.NET Image Resizer
+ImageUltimate v1.8.7 - ASP.NET Image Resizer
 Copyright © 2015-2016 GleamTech
 http://www.gleamtech.com/imageultimate
 

@@ -49,13 +49,13 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="GleamTech.Core">
-      <HintPath>..\packages\GleamTech.Core.1.5.5\lib\net40\GleamTech.Core.dll</HintPath>
+      <HintPath>..\packages\GleamTech.Core.1.6.2\lib\net40\GleamTech.Core.dll</HintPath>
     </Reference>
     <Reference Include="GleamTech.ExamplesCore">
-      <HintPath>..\packages\GleamTech.ExamplesCore.1.5.9\lib\net40\GleamTech.ExamplesCore.dll</HintPath>
+      <HintPath>..\packages\GleamTech.ExamplesCore.1.6.2\lib\net40\GleamTech.ExamplesCore.dll</HintPath>
     </Reference>
     <Reference Include="GleamTech.ImageUltimate">
-      <HintPath>..\packages\ImageUltimate.1.8.11\lib\net40\GleamTech.ImageUltimate.dll</HintPath>
+      <HintPath>..\packages\ImageUltimate.1.9.2\lib\net40\GleamTech.ImageUltimate.dll</HintPath>
     </Reference>
     <Reference Include="System.Drawing"/>
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">

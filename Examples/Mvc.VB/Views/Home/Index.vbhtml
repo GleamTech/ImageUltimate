@@ -1,9 +1,11 @@
 ﻿@Imports GleamTech.ExamplesCore
 @Imports GleamTech.Web.Mvc
+@Imports GleamTech.ImageUltimate
 @Code
     Dim exampleExplorer = New ExampleExplorer() With {
         .FullViewport = True,
         .NavigationTitle = "ImageUltimate Examples",
+        .VersionTitle = "v" & ImageUltimateConfiguration.AssemblyInfo.FileVersion.ToString,
         .Examples = New ExampleBase() {
             New Example() With {
                 .Title = "Overview",

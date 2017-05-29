@@ -1,10 +1,12 @@
 ﻿@using GleamTech.ExamplesCore
+@using GleamTech.ImageUltimate
 @using GleamTech.Web.Mvc
 @{
     var exampleExplorer = new ExampleExplorer
     {
         FullViewport = true,
         NavigationTitle = "ImageUltimate Examples",
+        VersionTitle = "v" + ImageUltimateConfiguration.AssemblyInfo.FileVersion,
         Examples = new ExampleBase[]
         {
             new Example

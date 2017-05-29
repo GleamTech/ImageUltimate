@@ -1,9 +1,12 @@
 ﻿Imports GleamTech.ExamplesCore
+Imports GleamTech.ImageUltimate
 
 Public Class DefaultPage
     Inherits Page
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+
+        exampleExplorer.VersionTitle = "v" & ImageUltimateConfiguration.AssemblyInfo.FileVersion.ToString
 
         exampleExplorer.Examples = New ExampleBase() {
             New Example() With {

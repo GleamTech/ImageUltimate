@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Web.Mvc;
-using GleamTech.ExamplesCore;
+using GleamTech.Examples;
 using GleamTech.ImageUltimate;
 using GleamTech.ImageUltimateExamples.Mvc.CS.Models;
 

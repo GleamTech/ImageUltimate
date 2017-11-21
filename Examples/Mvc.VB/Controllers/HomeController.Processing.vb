@@ -1,5 +1,5 @@
 ﻿Imports System.Drawing
-Imports GleamTech.ExamplesCore
+Imports GleamTech.Examples
 Imports GleamTech.ImageUltimate
 Imports GleamTech.ImageUltimate.Web
 Imports GleamTech.ImageUltimateExamples.Mvc.VB.Models

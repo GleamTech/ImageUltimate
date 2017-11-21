@@ -1,4 +1,4 @@
-﻿@Imports GleamTech.ExamplesCore
+﻿@Imports GleamTech.Examples
 @Imports GleamTech.Web.Mvc
 @Imports GleamTech.ImageUltimate
 @Code
@@ -21,7 +21,7 @@
             }
         },
         .ExampleProjectName = "ASP.NET MVC (VB)",
-        .ExampleProjects = ExamplesCoreConfiguration.LoadExampleProjects(Server.MapPath("~/App_Data/ExampleProjects.json"))
+        .ExampleProjects = ExamplesConfiguration.LoadExampleProjects(Server.MapPath("~/App_Data/ExampleProjects.json"))
     }
 End Code
 <!DOCTYPE html>

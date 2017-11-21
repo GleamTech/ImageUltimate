@@ -1,4 +1,4 @@
-﻿@Imports  GleamTech.ExamplesCore
+﻿@Imports  GleamTech.Examples
 @Imports GleamTech.ImageUltimate.Web
 @Imports GleamTech.Web.Mvc
 @ModelType  GleamTech.ImageUltimateExamples.Mvc.VB.Models.ProcessingViewModel
@@ -8,7 +8,7 @@
 <html>
 <head>
     <title>Image Processing</title>
-    <link href="@ExamplesCoreConfiguration.GetVersionedUrl("~/resources/table.css")" rel="stylesheet" />
+    <link href="@ExamplesConfiguration.GetVersionedUrl("~/resources/table.css")" rel="stylesheet" />
 </head>
 <body style="margin: 20px;">
 

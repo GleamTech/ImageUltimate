@@ -1,4 +1,4 @@
-﻿Imports GleamTech.ExamplesCore
+﻿Imports GleamTech.Examples
 
 Namespace Models
 

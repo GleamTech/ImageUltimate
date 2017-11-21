@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using GleamTech.ExamplesCore;
+using GleamTech.Examples;
 
 namespace GleamTech.ImageUltimateExamples.Mvc.CS.Models
 {

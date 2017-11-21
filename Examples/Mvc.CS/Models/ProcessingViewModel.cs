@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Web.Mvc;
-using GleamTech.ExamplesCore;
+using GleamTech.Examples;
 using GleamTech.ImageUltimate.Web;
 
 namespace GleamTech.ImageUltimateExamples.Mvc.CS.Models

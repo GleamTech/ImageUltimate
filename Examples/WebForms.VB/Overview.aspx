@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="vb" AutoEventWireup="true" CodeBehind="Overview.aspx.vb" Inherits="GleamTech.ImageUltimateExamples.WebForms.VB.OverviewPage" %>
-<%@ Register TagPrefix="GleamTech" Namespace="GleamTech.ExamplesCore" Assembly="GleamTech.ExamplesCore" %>
+<%@ Register TagPrefix="GleamTech" Namespace="GleamTech.Examples" Assembly="GleamTech.Core" %>
 <%@ Import Namespace="GleamTech.ImageUltimate.Web" %>
 
 <!DOCTYPE html>
@@ -7,7 +7,7 @@
 <html>
 <head runat="server">
     <title>Overview</title>
-    <link href="<%=ExamplesCoreConfiguration.GetVersionedUrl("~/resources/table.css")%>" rel="stylesheet" />
+    <link href="<%=ExamplesConfiguration.GetVersionedUrl("~/resources/table.css")%>" rel="stylesheet" />
 </head>
 <body style="margin: 20px;">
 

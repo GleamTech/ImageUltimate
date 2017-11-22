@@ -116,22 +116,22 @@ ImageUltimate is the fastest and easiest ASP.NET Image Resizer which supports bo
     -   Or install NuGet package and add references automatically via NuGet Package Manager in Visual Studio: 
         Go to **Tools -> NuGet Package Manager -> Package Manager Console** and run this command:
 
-			`Install-Package ImageUltimate -Source https://get.gleamtech.com/nuget/default/`
+        `Install-Package ImageUltimate -Source https://get.gleamtech.com/nuget/default/`
 
-		If you prefer using the user interface when working with NuGet, you can also install the package this way:
+        If you prefer using the user interface when working with NuGet, you can also install the package this way:
 		
-			-  GleamTech has its own NuGet feed so first you need to add this feed to be able to find GleamTech's packages. 
-			    Go to **Tools -> NuGet Package Manager -> Package Manager Settings** and then click the **+** button to add a 
+        - Â GleamTech has its own NuGet feed so first you need to add this feed to be able to find GleamTech's packages. 
+           Go to **Tools -> NuGet Package Manager -> Package Manager Settings** and then click the **+** button to add a 
 			    new package source. Enter `GleamTech` in **Name** field and `https://get.gleamtech.com/nuget/default/` 
 			    in **Source** field and click **OK**.
 			    
-			-  Go to **Tools -> NuGet Package Manager -> Manage NuGet Packages for Solution**, select `GleamTech` or `All` 
+        -  Go to **Tools -> NuGet Package Manager -> Manage NuGet Packages for Solution**, select `GleamTech` or `All` 
 			   in the Package source dropdown on the top right. Now enter `ImageUltimate` in the search field, 
 			   and click **Install** button on the found package.
 
 2.  Set ImageUltimate's global configuration. For example, you may want to set the license key and the default path for finding source images (SourcePath). Insert some of the following lines (if overriding a default value is required) into the ```Application_Start``` method of your **Global.asax.cs**:
 
-    ```
+    ```c#
     //Set this property only if you have a valid license key, otherwise do not
     //set it so ImageUltimate runs in trial mode.
     ImageUltimateConfiguration.Current.LicenseKey = "QQJDJLJP34...";
@@ -154,7 +154,7 @@ ImageUltimate is the fastest and easiest ASP.NET Image Resizer which supports bo
 
     Alternatively you can specify the configuration in ```<appSettings>``` tag of your Web.config.
 
-    ```
+    ```xml
     <appSettings>
       <add key="ImageUltimate:LicenseKey" value="QQJDJLJP34..." />
       <add key="ImageUltimateWeb:SourcePath" value="~/Content" />
@@ -166,13 +166,13 @@ ImageUltimate is the fastest and easiest ASP.NET Image Resizer which supports bo
 
 3.  Open one of your View pages (eg. Index.cshtml) and at the top of your page add GleamTech.ImageUltimate.Web namespace (sometimes you will also need GleamTech.ImageUltimate namespace):
 
-    ```
+    ```cshtml
     @using GleamTech.ImageUltimate.Web
     ```
 
     Alternatively you can add the namespaces globally in **Views/web.config** to avoid adding namespaces in your pages every time:
 
-    ```
+    ```xml
     <system.web.webPages.razor>
       <pages pageBaseType="System.Web.Mvc.WebViewPage">
         <namespaces>
@@ -188,7 +188,7 @@ ImageUltimate is the fastest and easiest ASP.NET Image Resizer which supports bo
 
     Now in your page insert these lines:
 
-    ```
+    ```cshtml
     @Html.Image("SomeImage.jpg", task => task.ResizeWidth(300))
     ```
 
@@ -196,13 +196,13 @@ ImageUltimate is the fastest and easiest ASP.NET Image Resizer which supports bo
 
     Sometimes you may need to render a url instead of a <img> tag, then use Url.Image:
 
-    ```
+    ```cshtml
     @Url.Image("SomeImage.jpg", task => task.ResizeWidth(300))
     ```
     
     For example, consider you want to add a background image to a CSS class:
     
-    ```
+    ```html
     <style>
       .someCls 
       {
@@ -220,22 +220,22 @@ ImageUltimate is the fastest and easiest ASP.NET Image Resizer which supports bo
     -   Or install NuGet package and add references automatically via NuGet Package Manager in Visual Studio: 
         Go to **Tools -> NuGet Package Manager -> Package Manager Console** and run this command:
 
-			`Install-Package ImageUltimate -Source https://get.gleamtech.com/nuget/default/`
+        `Install-Package ImageUltimate -Source https://get.gleamtech.com/nuget/default/`
 
-		If you prefer using the user interface when working with NuGet, you can also install the package this way:
+        If you prefer using the user interface when working with NuGet, you can also install the package this way:
 		
-			-  GleamTech has its own NuGet feed so first you need to add this feed to be able to find GleamTech's packages. 
-			    Go to **Tools -> NuGet Package Manager -> Package Manager Settings** and then click the **+** button to add a 
+        - Â GleamTech has its own NuGet feed so first you need to add this feed to be able to find GleamTech's packages. 
+           Go to **Tools -> NuGet Package Manager -> Package Manager Settings** and then click the **+** button to add a 
 			    new package source. Enter `GleamTech` in **Name** field and `https://get.gleamtech.com/nuget/default/` 
 			    in **Source** field and click **OK**.
 			    
-			-  Go to **Tools -> NuGet Package Manager -> Manage NuGet Packages for Solution**, select `GleamTech` or `All` 
+        -  Go to **Tools -> NuGet Package Manager -> Manage NuGet Packages for Solution**, select `GleamTech` or `All` 
 			   in the Package source dropdown on the top right. Now enter `ImageUltimate` in the search field, 
 			   and click **Install** button on the found package.
 
 2.  Set ImageUltimate's global configuration. For example, you may want to set the license key and the default path for finding source images (SourcePath). Insert some of the following lines (if overriding a default value is required) into the ```Application_Start``` method of your **Global.asax.cs**:
 
-    ```
+    ```cshtml
     //Set this property only if you have a valid license key, otherwise do not
     //set it so ImageUltimate runs in trial mode.
     ImageUltimateConfiguration.Current.LicenseKey = "QQJDJLJP34...";
@@ -258,7 +258,7 @@ ImageUltimate is the fastest and easiest ASP.NET Image Resizer which supports bo
 
     Alternatively you can specify the configuration in ```<appSettings>``` tag of your Web.config.
 
-    ```
+    ```xml
     <appSettings>
       <add key="ImageUltimate:LicenseKey" value="QQJDJLJP34..." />
       <add key="ImageUltimateWeb:SourcePath" value="~/Content" />
@@ -270,13 +270,13 @@ ImageUltimate is the fastest and easiest ASP.NET Image Resizer which supports bo
 
 3.  Open one of your pages (eg. Default.aspx) and at the top of your page add GleamTech.ImageUltimate.Web namespace (sometimes you will also need GleamTech.ImageUltimate namespace):
 
-    ```
+    ```aspx
     <%@ Import Namespace="GleamTech.ImageUltimate.Web" %>
     ```
 
     Alternatively you can add the namespaces globally in **Web.config** to avoid adding namespaces in your pages every time:
 
-    ```
+    ```xml
     <system.web>
       <pages>
         <namespaces>
@@ -292,7 +292,7 @@ ImageUltimate is the fastest and easiest ASP.NET Image Resizer which supports bo
 
     Now in your page insert these lines:
 
-    ```
+    ```aspx
     <%=Page.ImageHtml("SomeImage.jpg", task => task.ResizeWidth(300))%>
     ```
 
@@ -300,13 +300,13 @@ ImageUltimate is the fastest and easiest ASP.NET Image Resizer which supports bo
 
     Sometimes you may need to render a url instead of a <img> tag, then use Page.ImageUrl:
 
-    ```
+    ```aspx
     <%=Page.ImageUrl("SomeImage.jpg", task => task.ResizeWidth(300))%>
     ```
 
     For example, consider you want to add a background image to a CSS class:
 
-    ```
+    ```html
     <style>
       .someCls 
       {

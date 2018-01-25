@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Web.Mvc;
 using GleamTech.Examples;
-using GleamTech.ImageUltimate.Web;
+using GleamTech.ImageUltimate.AspNet;
 
 namespace GleamTech.ImageUltimateExamples.Mvc.CS.Models
 {

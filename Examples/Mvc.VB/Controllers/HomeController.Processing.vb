@@ -1,7 +1,7 @@
 ﻿Imports System.Drawing
 Imports GleamTech.Examples
 Imports GleamTech.ImageUltimate
-Imports GleamTech.ImageUltimate.Web
+Imports GleamTech.ImageUltimate.AspNet
 Imports GleamTech.ImageUltimateExamples.Mvc.VB.Models
 
 Namespace Controllers
@@ -11,7 +11,7 @@ Namespace Controllers
         Function Processing() As ActionResult
             Dim model = New ProcessingViewModel() With {
                     .ExampleFileSelector = New ExampleFileSelector() With {
-                    .ID = "exampleFileSelector",
+                    .Id = "exampleFileSelector",
                     .InitialFile = "JPG Image.jpg",
                     .FormWrapped = False
                     },

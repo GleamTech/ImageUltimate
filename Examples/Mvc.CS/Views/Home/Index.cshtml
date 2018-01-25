@@ -1,10 +1,10 @@
-﻿@using GleamTech.Examples
+﻿@using GleamTech.AspNet.Mvc
+@using GleamTech.Examples
 @using GleamTech.ImageUltimate
-@using GleamTech.Web.Mvc
 @{
     var exampleExplorer = new ExampleExplorer
     {
-        FullViewport = true,
+        DisplayMode = GleamTech.AspNet.UI.DisplayMode.Viewport,
         NavigationTitle = "ImageUltimate Examples",
         VersionTitle = "v" + ImageUltimateConfiguration.AssemblyInfo.FileVersion,
         Examples = new ExampleBase[]
@@ -34,11 +34,9 @@
 <head>
     <title>ImageUltimate Examples - ASP.NET MVC (C#)</title>
 
-    @Html.RenderCss(exampleExplorer)
-    @Html.RenderJs(exampleExplorer)
-
+    @this.RenderHead(exampleExplorer)
 </head>
 <body>
-    @Html.RenderControl(exampleExplorer)
+    @this.RenderBody(exampleExplorer)
 </body>
 </html>

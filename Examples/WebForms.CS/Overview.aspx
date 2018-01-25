@@ -1,23 +1,25 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Overview.aspx.cs" Inherits="GleamTech.ImageUltimateExamples.WebForms.CS.OverviewPage" %>
 <%@ Register TagPrefix="GleamTech" Namespace="GleamTech.Examples" Assembly="GleamTech.Core" %>
-<%@ Import Namespace="GleamTech.ImageUltimate.Web" %>
+<%@ Import Namespace="GleamTech.ImageUltimate.AspNet.WebForms" %>
 
 <!DOCTYPE html>
 
 <html>
 <head runat="server">
     <title>Overview</title>
-    <link href="<%=ExamplesConfiguration.GetVersionedUrl("~/resources/table.css")%>" rel="stylesheet" />
+    <asp:PlaceHolder runat="server">
+        <link href="<%=ExamplesConfiguration.GetVersionedUrl("~/resources/table.css")%>" rel="stylesheet" />
+    </asp:PlaceHolder>
 </head>
 <body style="margin: 20px;">
 
-    <GleamTech:ExampleFileSelector ID="exampleFileSelector" runat="server"
+    <GleamTech:ExampleFileSelectorControl ID="exampleFileSelector" runat="server"
         InitialFile="JPG Image.jpg" />
     
     <table class="info image">
         <caption>Thumbnail</caption>
         <tr>
-            <td><%=Page.ImageHtml(ImagePath, task => task.Thumbnail(160))%></td>
+            <td><%=this.ImageTag(ImagePath, task => task.Thumbnail(160))%></td>
         </tr>
     </table>
 

@@ -2,7 +2,7 @@
 using System.Drawing;
 using System.Web.UI.WebControls;
 using GleamTech.ImageUltimate;
-using GleamTech.ImageUltimate.Web;
+using GleamTech.ImageUltimate.AspNet;
 
 namespace GleamTech.ImageUltimateExamples.WebForms.CS
 {

@@ -1,18 +1,20 @@
 ﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="Processing.aspx.vb" Inherits="GleamTech.ImageUltimateExamples.WebForms.VB.ProcessingPage" %>
 <%@ Register TagPrefix="GleamTech" Namespace="GleamTech.Examples" Assembly="GleamTech.Core" %>
-<%@ Import Namespace="GleamTech.ImageUltimate.Web" %>
+<%@ Import Namespace="GleamTech.ImageUltimate.AspNet.WebForms" %>
 
 <!DOCTYPE html>
 
 <html>
 <head runat="server">
     <title>Image Processing</title>
-    <link href="<%=ExamplesConfiguration.GetVersionedUrl("~/resources/table.css")%>" rel="stylesheet" />
+    <asp:PlaceHolder runat="server">
+        <link href="<%=ExamplesConfiguration.GetVersionedUrl("~/resources/table.css")%>" rel="stylesheet" />
+    </asp:PlaceHolder>
 </head>
 <body style="margin: 20px;">
    
     <form id="form1" runat="server">
-        <GleamTech:ExampleFileSelector ID="exampleFileSelector" runat="server"
+        <GleamTech:ExampleFileSelectorControl ID="exampleFileSelector" runat="server"
             InitialFile="JPG Image.jpg"
             FormWrapped="False" />
 
@@ -24,21 +26,21 @@
     <table class="info image">
         <caption>Resulting Image</caption>
         <tr>
-            <td><%=Page.ImageHtml(ImagePath, TaskAction)%></td>
+            <td><%=Me.ImageTag(ImagePath, TaskAction)%></td>
         </tr>
     </table>
 
     <table class="info image">
         <caption>Original Image (Resized to width 300)</caption>
         <tr>
-            <td><%=Page.ImageHtml(ImagePath, Function(task) task.ResizeWidth(300))%></td>
+            <td><%=Me.ImageTag(ImagePath, Function(task) task.ResizeWidth(300))%></td>
         </tr>
     </table>
     
     <table class="info">
         <caption>Resulting Image Url</caption>
         <tr>
-            <td><%=Page.ImageUrl(ImagePath, TaskAction)%></td>
+            <td><%=Me.ImageUrl(ImagePath, TaskAction)%></td>
         </tr>
     </table>
 

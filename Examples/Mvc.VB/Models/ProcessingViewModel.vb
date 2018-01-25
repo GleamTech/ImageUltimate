@@ -1,5 +1,5 @@
 ﻿Imports GleamTech.Examples
-Imports GleamTech.ImageUltimate.Web
+Imports GleamTech.ImageUltimate.AspNet
 
 Namespace Models
 

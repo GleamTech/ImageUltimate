@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web.Mvc;
 using GleamTech.Examples;
 using GleamTech.ImageUltimate;
-using GleamTech.ImageUltimate.Web;
+using GleamTech.ImageUltimate.AspNet;
 using GleamTech.ImageUltimateExamples.Mvc.CS.Models;
 
 namespace GleamTech.ImageUltimateExamples.Mvc.CS.Controllers
@@ -17,7 +17,7 @@ namespace GleamTech.ImageUltimateExamples.Mvc.CS.Controllers
             {
                 ExampleFileSelector = new ExampleFileSelector
                 {
-                    ID = "exampleFileSelector",
+                    Id = "exampleFileSelector",
                     InitialFile = "JPG Image.jpg",
                     FormWrapped = false
                 },

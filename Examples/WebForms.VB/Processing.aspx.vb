@@ -1,6 +1,6 @@
 ﻿Imports System.Drawing
 Imports GleamTech.ImageUltimate
-Imports GleamTech.ImageUltimate.Web
+Imports GleamTech.ImageUltimate.AspNet
 
 Public Class ProcessingPage
     Inherits System.Web.UI.Page

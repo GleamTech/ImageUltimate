@@ -5,12 +5,12 @@
     <li>
         <p>
             ImageWebTask class which can not be instantiated but which is passed as a parameter to your lambda expression so that you can chain image processing commands.
-            <br />ImageUltimate adds extensions methods to HtmlHelper and UrlHelper classes for ASP.NET MVC support:
+            <br />ImageUltimate adds extensions methods to WebViewPage class for ASP.NET MVC support:
         </p>
             <ul>
-                <li><p><pre style="font-family:Consolas;font-size:13;color:black;background:white;"><span style="background:yellow;">@</span>Html.Image(<span style="color:#a31515;">&quot;Image.jpg&quot;</span>,&nbsp;task&nbsp;&gt;=&nbsp;task.ResizeWidth(300))
+                <li><p><pre style="font-family:Consolas;font-size:13;color:black;background:white;"><span style="background:yellow;">@</span><span style="color:blue;">Me</span>.ImageTag(<span style="color:#a31515;">&quot;Image.jpg&quot;</span>,&nbsp;<span style="color:blue;">Function</span>(task)&nbsp;task.ResizeWidth(300))
 </pre></p></li>
-                <li><p><pre style="font-family:Consolas;font-size:13;color:black;background:white;"><span style="background:yellow;">@</span>Url.Image(<span style="color:#a31515;">&quot;Image.jpg&quot;</span>,&nbsp;task&nbsp;&gt;=&nbsp;task.ResizeWidth(300))
+                <li><p><pre style="font-family:Consolas;font-size:13;color:black;background:white;"><span style="background:yellow;">@</span><span style="color:blue;">Me</span>.ImageUrl(<span style="color:#a31515;">&quot;Image.jpg&quot;</span>,&nbsp;<span style="color:blue;">Function</span>(task)&nbsp;task.ResizeWidth(300))
 </pre></p></li>
             </ul>
     </li>

@@ -8,6 +8,6 @@
     <title>ImageUltimate Examples - ASP.NET Web Forms (C#)</title>
 </head>
     <body>
-        <GleamTech:ExampleExplorer ID="exampleExplorer" FullViewport="True" NavigationTitle="ImageUltimate Examples" runat="server" />
+        <GleamTech:ExampleExplorerControl ID="exampleExplorer" DisplayMode="Viewport" NavigationTitle="ImageUltimate Examples" runat="server" />
     </body>
 </html>

@@ -9,7 +9,7 @@ Namespace Controllers
         Function Overview() As ActionResult
             Dim model = New OverviewViewModel() With {
                 .ExampleFileSelector = New ExampleFileSelector() With {
-                    .ID = "exampleFileSelector",
+                    .Id = "exampleFileSelector",
                     .InitialFile = "JPG Image.jpg"
                 }
             }

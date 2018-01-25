@@ -1,6 +1,6 @@
-﻿@Imports  GleamTech.Examples
-@Imports GleamTech.ImageUltimate.Web
-@Imports GleamTech.Web.Mvc
+﻿@Imports GleamTech.AspNet.Mvc
+@Imports GleamTech.Examples
+@Imports GleamTech.ImageUltimate.AspNet.Mvc
 @ModelType  GleamTech.ImageUltimateExamples.Mvc.VB.Models.OverviewViewModel
 
 <!DOCTYPE html>
@@ -12,12 +12,12 @@
 </head>
 <body style="margin: 20px;">
 
-    @Html.RenderControl(Model.ExampleFileSelector)
+    @Me.RenderBody(Model.ExampleFileSelector)
 
     <table class="info image">
         <caption>Thumbnail</caption>
         <tr>
-            <td>@Html.Image(Model.ImagePath, Function(task) task.Thumbnail(160))</td>
+            <td>@Me.ImageTag(Model.ImagePath, Function(task) task.Thumbnail(160))</td>
         </tr>
     </table>
 

@@ -15,7 +15,7 @@ namespace GleamTech.ImageUltimateExamples.Mvc.CS.Controllers
             {
                 ExampleFileSelector = new ExampleFileSelector
                 {
-                    ID = "exampleFileSelector",
+                    Id = "exampleFileSelector",
                     InitialFile = "JPG Image.jpg"
                 }
             };

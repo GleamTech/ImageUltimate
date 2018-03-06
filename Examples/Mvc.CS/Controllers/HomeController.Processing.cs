@@ -1,18 +1,49 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
+using System.Linq.Expressions;
 using System.Web.Mvc;
 using GleamTech.Examples;
 using GleamTech.ImageUltimate;
 using GleamTech.ImageUltimate.AspNet;
 using GleamTech.ImageUltimateExamples.Mvc.CS.Models;
+using GleamTech.Util;
 
 namespace GleamTech.ImageUltimateExamples.Mvc.CS.Controllers
 {
     public partial class HomeController
     {
+        private static readonly Expression<Action<ImageWebTask>>[] TaskExpressions = {
+            task => task.ResizeWidth(300, ResizeMode.Max),
+            task => task.ResizeHeight(200, ResizeMode.Max),
+            task => task.Resize(300, 300, ResizeMode.Max),
+            task => task.ResizeWidth(50, ResizeMode.Percentage),
+            task => task.Resize(50, 60, ResizeMode.Percentage),
+            task => task.Resize(300, 300, ResizeMode.Stretch),
+            task => task.LiquidResize(75, 100, ResizeMode.Percentage),
+            task => task.Crop(0, 0, 150, 150),
+            task => task.TrimBorders(Color.Black, 10),
+            task => task.Rotate(45, Color.Transparent),
+            task => task.Rotate(-45, Color.Transparent),
+            task => task.FlipHorizontal(),
+            task => task.FlipVertical(),
+            task => task.Brightness(20),
+            task => task.Brightness(-20),
+            task => task.Contrast(20),
+            task => task.Contrast(-20),
+            task => task.BrightnessContrast(20, 20),
+            task => task.Enhance(),
+            task => task.Blur(1),
+            task => task.Sharpen(1),
+            task => task.Format(ImageWebSafeFormat.Png),
+            task => task.FileName("CustomNameForSEO")
+        };
+
         public ActionResult Processing()
         {
+            int selectedValue;
+            int.TryParse(Request["taskSelector"], out selectedValue);
+
             var model = new ProcessingViewModel
             {
                 ExampleFileSelector = new ExampleFileSelector
@@ -21,89 +52,45 @@ namespace GleamTech.ImageUltimateExamples.Mvc.CS.Controllers
                     InitialFile = "JPG Image.jpg",
                     FormWrapped = false
                 },
-                TaskSelectList = PopulateTaskSelector(Request["taskSelector"])
+                TaskSelectList = PopulateTaskSelector(selectedValue)
             };
 
             model.ImagePath = model.ExampleFileSelector.SelectedFile;
-            model.TaskAction = GetTaskAction(Request["taskSelector"] ?? model.TaskSelectList.First().Text);
+
+            var expression = TaskExpressions[selectedValue];
+            var lambda = expression.Compile();
+
+            model.TaskAction = task =>
+            {
+                task.ResizeWidth(400);
+                lambda(task);
+            };
+
+            model.CodeString = string.Format(
+                "@this.ImageTag(\"{0}\", {1})",
+                model.ExampleFileSelector.SelectedFile.FileName,
+                ExpressionStringBuilder.ToString(expression)
+            );
 
             return View(model);
         }
 
-        private SelectList PopulateTaskSelector(string selectedValue)
+        private List<SelectListItem> PopulateTaskSelector(int selectedValue)
         {
-            return new SelectList(new[]
-            {
-                new SelectListItem {Text = "ResizeWidth(300)"},
-                new SelectListItem {Text = "ResizeHeight(300)"},
-                new SelectListItem {Text = "Resize(300, 300)"},
-                new SelectListItem {Text = "Resize(300, 300, ResizeMode.Crop)"},
-                new SelectListItem {Text = "Resize(300, 300, ResizeMode.Stretch)"},
-                new SelectListItem {Text = "Crop(0, 0, 300, 300)"},
-                new SelectListItem {Text = "CropBorders(Color.Black, 10)"},
-                new SelectListItem {Text = "Rotate(45)"},
-                new SelectListItem {Text = "Rotate(-45)"},
-                new SelectListItem {Text = "Flip(FlipMode.Horizontal)"},
-                new SelectListItem {Text = "Flip(FlipMode.Vertical)"},
-                new SelectListItem {Text = "Brightness(20)"},
-                new SelectListItem {Text = "Brightness(-20)"},
-                new SelectListItem {Text = "BrightnessAuto()"},
-                new SelectListItem {Text = "Contrast(20)"},
-                new SelectListItem {Text = "Contrast(-20)"},
-                new SelectListItem {Text = "ContrastAuto()"},
-                new SelectListItem {Text = "BrightnessContrast(20, 20)"},
-                new SelectListItem {Text = "Format(ImageWebSaveFormat.Png)"},
-                new SelectListItem {Text = "FileName(\"CustomNameForSEO\")"}
-            }, "Text", "Text", selectedValue);
-        }
+            var items = new List<SelectListItem>();
 
-        private Action<ImageWebTask> GetTaskAction(string taskSelector)
-        {
-            switch (taskSelector)
+            for (var i = 0; i < TaskExpressions.Length; i++)
             {
-                case "ResizeWidth(300)":
-                    return task => task.ResizeWidth(300);
-                case "ResizeHeight(300)":
-                    return task => task.ResizeHeight(300);
-                case "Resize(300, 300)":
-                    return task => task.Resize(300, 300);
-                case "Resize(300, 300, ResizeMode.Crop)":
-                    return task => task.Resize(300, 300, ResizeMode.Crop);
-                case "Resize(300, 300, ResizeMode.Stretch)":
-                    return task => task.Resize(300, 300, ResizeMode.Stretch);
-                case "Crop(0, 0, 300, 300)":
-                    return task => task.Crop(0, 0, 300, 300);
-                case "CropBorders(Color.Black, 10)":
-                    return task => task.ResizeWidth(300).CropBorders(Color.Black, 10);
-                case "Rotate(45)":
-                    return task => task.ResizeWidth(300).Rotate(45);
-                case "Rotate(-45)":
-                    return task => task.ResizeWidth(300).Rotate(-45);
-                case "Flip(FlipMode.Horizontal)":
-                    return task => task.ResizeWidth(300).Flip(FlipMode.Horizontal);
-                case "Flip(FlipMode.Vertical)":
-                    return task => task.ResizeWidth(300).Flip(FlipMode.Vertical);
-                case "Brightness(20)":
-                    return task => task.ResizeWidth(300).Brightness(20);
-                case "Brightness(-20)":
-                    return task => task.ResizeWidth(300).Brightness(-20);
-                case "BrightnessAuto()":
-                    return task => task.ResizeWidth(300).BrightnessAuto();
-                case "Contrast(20)":
-                    return task => task.ResizeWidth(300).Contrast(20);
-                case "Contrast(-20)":
-                    return task => task.ResizeWidth(300).Contrast(-20);
-                case "ContrastAuto()":
-                    return task => task.ResizeWidth(300).ContrastAuto();
-                case "BrightnessContrast(20, 20)":
-                    return task => task.ResizeWidth(300).BrightnessContrast(20, 20);
-                case "Format(ImageWebSaveFormat.Png)":
-                    return task => task.ResizeWidth(300).Format(ImageWebSaveFormat.Png);
-                case "FileName(\"CustomNameForSEO\")":
-                    return task => task.ResizeWidth(300).FileName("CustomNameForSEO");
-                default:
-                    return null;
+                items.Add(
+                    new SelectListItem { 
+                        Text = ExpressionStringBuilder.ToString(TaskExpressions[i]),
+                        Value = i.ToString(),
+                        Selected = (i == selectedValue)
+                    }
+                );
             }
+
+            return items;
         }
     }
 }

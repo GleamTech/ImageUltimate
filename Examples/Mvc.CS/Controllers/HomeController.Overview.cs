@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Web.Mvc;
 using GleamTech.Examples;
 using GleamTech.ImageUltimate;
@@ -29,45 +28,26 @@ namespace GleamTech.ImageUltimateExamples.Mvc.CS.Controllers
                 model.ImageData.Add("Height", imageInfo.Height);
                 model.ImageData.Add("DpiX", imageInfo.DpiX);
                 model.ImageData.Add("DpiY", imageInfo.DpiY);
-                model.ImageData.Add("PixelFormat", imageInfo.PixelFormatInfo.Description);
-                model.ImageData.Add("⤷ ColorModel", imageInfo.PixelFormatInfo.ColorModel);
-                model.ImageData.Add("⤷ BitDepth", imageInfo.PixelFormatInfo.BitDepth);
-                model.ImageData.Add("⤷ HasAlpha", imageInfo.PixelFormatInfo.HasAlpha);
-                model.ImageData.Add("⤷ IsIndexed", imageInfo.PixelFormatInfo.IsIndexed);
-                model.ImageData.Add("⤷ IsRgb", imageInfo.PixelFormatInfo.IsRgb);
-                model.ImageData.Add("⤷ IsExtended", imageInfo.PixelFormatInfo.IsExtended);
-                model.ImageData.Add("⤷ ChannelCount", imageInfo.PixelFormatInfo.ChannelCount);
-                model.ImageData.Add("⤷ MaxChannelValue", imageInfo.PixelFormatInfo.MaxChannelValue);
+                model.ImageData.Add("ColorSpace", imageInfo.ColorSpace);
+                model.ImageData.Add("ColorType", imageInfo.ColorType);
+                model.ImageData.Add("BitDepth", imageInfo.BitDepth);
+                model.ImageData.Add("HasAlpha", imageInfo.HasAlpha);
+                model.ImageData.Add("ChannelCount", imageInfo.ChannelCount);
 
                 foreach (var entry in imageInfo.ExifDictionary)
-                    model.ImageExifMetadata.Add(entry.Key.ToString(), Tuple.Create(GetStringValue(entry), entry.Description));
+                    model.ImageExifMetadata.Add(entry.Tag.ToString(), Tuple.Create(entry.Value, entry.Description));
 
                 if (model.ImageExifMetadata.Count == 0)
                     model.ImageExifMetadata.Add("", Tuple.Create("", ""));
 
                 foreach (var entry in imageInfo.IptcDictionary)
-                    model.ImageIptcMetadata.Add(entry.Key.ToString(), Tuple.Create(GetStringValue(entry), entry.Description));
+                    model.ImageIptcMetadata.Add(entry.Tag.ToString(), Tuple.Create(entry.Value, entry.Description));
 
                 if (model.ImageIptcMetadata.Count == 0)
                     model.ImageIptcMetadata.Add("", Tuple.Create("", ""));
             }
 
             return View(model);
-        }
-
-        private static string GetStringValue<TKey>(MetadataEntry<TKey> entry)
-        {
-            if (entry.Value is string)
-                return entry.ValueString;
-
-            var valueType = entry.Value.GetType();
-            if (valueType.IsArray)
-                return string.Format("{0} array with length {1}", valueType.GetElementType(), ((ICollection)entry.Value).Count);
-
-            if (entry.Values.Length > 1)
-                return string.Format("{0} array with length {1}", entry.Values[0].GetType(), entry.Values.Length);
-
-            return entry.ValueString;
         }
     }
 }

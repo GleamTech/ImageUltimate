@@ -10,6 +10,19 @@
     <asp:PlaceHolder runat="server">
         <link href="<%=ExamplesConfiguration.GetVersionedUrl("~/resources/table.css")%>" rel="stylesheet" />
     </asp:PlaceHolder>
+    <script type="text/javascript">
+        function showImageSize(img, targetId) {
+            if (!img.complete)
+                return;
+            if (typeof img.naturalWidth != "undefined" && img.naturalWidth === 0)
+                return;
+
+            var width = img.naturalWidth || img.width;
+            var height = img.naturalHeight || img.height;
+
+            document.getElementById(targetId).innerHTML = width + "x" + height;
+        }
+    </script>
 </head>
 <body style="margin: 20px;">
     
@@ -24,23 +37,34 @@
     </form>
 
     <table class="info image">
-        <caption>Resulting Image</caption>
+        <caption>Resulting Image (<span id="outputSize"></span>)</caption>
         <tr>
-            <td><%=this.ImageTag(ImagePath, TaskAction)%></td>
+            <td><%=this.ImageTag(ImagePath, TaskAction, new {onload="showImageSize(this, 'outputSize')"})%></td>
         </tr>
     </table>
 
     <table class="info image">
-        <caption>Original Image (Resized to width 300)</caption>
+        <caption>Original Image (Resized to <span id="inputSize"></span>)</caption>
         <tr>
-            <td><%=this.ImageTag(ImagePath, task => task.ResizeWidth(300))%></td>
+            <td><%=this.ImageTag(ImagePath, task => task.ResizeWidth(400), new {onload="showImageSize(this, 'inputSize')"})%></td>
         </tr>
     </table>
     
+    <div class="clear"></div>
+
+    <table class="info">
+        <caption>Code</caption>
+        <tr>
+            <td><pre><%=CodeString%></pre></td>
+        </tr>
+    </table>
+    
+    <div class="clear"></div>
+
     <table class="info">
         <caption>Resulting Image Url</caption>
         <tr>
-            <td><%=this.ImageUrl(ImagePath, TaskAction)%></td>
+            <td><pre><%=this.ImageUrl(ImagePath, TaskAction)%></pre></td>
         </tr>
     </table>
 

@@ -7,11 +7,13 @@ Namespace Models
 
         Public Property ExampleFileSelector As ExampleFileSelector
 
-        Public Property TaskSelectList As SelectList
+        Public Property TaskSelectList As List(Of SelectListItem)
 
         Public Property ImagePath As String
 
         Public Property TaskAction As Action(Of ImageWebTask)
+
+        Public Property CodeString As String
 
     End Class
 

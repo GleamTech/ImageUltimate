@@ -35,3 +35,8 @@ table.image img
     background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHAAAABwAQMAAAD8LmYIAAAABlBMVEXMzMz////TjRV2AAAAIklEQVQ4y2P4z4AMGejGZRggi0f9O+rfUf+O+nfUv4PSvwAQPQ0eTjYYlQAAAABJRU5ErkJggg==');
     background-repeat: repeat;
 }
+
+.clear 
+{
+    clear: both
+}

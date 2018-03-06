@@ -42,10 +42,10 @@ ImageUltimate is the fastest and easiest ASP.NET Image Resizer which supports bo
 
 <thead>
   <tr class="info">
-     <th>Format</th>
-     <th>Extensions</th>
-     <th class="text-center">Load</th>
-     <th class="text-center">Save</th>
+     <th align="left">Format</th>
+     <th align="left">Extensions</th>
+     <th align="left">Load</th>
+     <th align="left">Save</th>
   </tr>
  </thead>
 <tbody>

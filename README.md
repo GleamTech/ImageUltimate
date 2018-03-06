@@ -37,6 +37,265 @@ ImageUltimate is the fastest and easiest ASP.NET Image Resizer which supports bo
 
 *   Strongly-typed API for web, no need to learn and memorize messy url querystring parameters, just chain commands with the help of intellisense.
 
+### Supported Formats:
+<table class="table table-bordered table-hover">
+
+<thead>
+  <tr class="info">
+     <th>Format</th>
+     <th>Extensions</th>
+     <th class="text-center">Load</th>
+     <th class="text-center">Save</th>
+  </tr>
+ </thead>
+<tbody>
+
+<tr>
+    <th colspan="5">Raster Image Formats:</th>
+</tr>
+
+<tr>
+    <td>Joint Photographic Experts Group (JPEG)</td>
+    <td>.jpg, .jpeg, .jpe, .jif, .jfif, .jfi, .exif</td>
+    <td class="text-center">&#x2713;</td>
+    <td class="text-center">&#x2713;</td>
+</tr>
+
+<tr>
+    <td>JPEG 2000 (JP2)</td>
+    <td>.jp2, .jpf, .jpx, .j2k, .j2c, .jpc</td>
+    <td class="text-center">&#x2713;</td>
+    <td class="text-center">&#x2713;</td>
+</tr>
+
+<tr>
+    <td>Portable Network Graphics (PNG)</td>
+    <td>.png</td>
+    <td class="text-center">&#x2713;</td>
+    <td class="text-center">&#x2713;</td>
+</tr>
+
+<tr>
+    <td>Graphics Interchange Format (GIF)</td>
+    <td>.gif</td>
+    <td class="text-center">&#x2713;</td>
+    <td class="text-center">&#x2713;</td>
+</tr>
+
+<tr>
+    <td>WebP Image</td>
+    <td>.webp</td>
+    <td class="text-center">&#x2713;</td>
+    <td class="text-center">&#x2713;</td>
+</tr>
+
+<tr>
+    <td>Bitmap Picture (BMP)</td>
+    <td>.bmp</td>
+    <td class="text-center">&#x2713;</td>
+    <td class="text-center">&#x2713;</td>
+</tr>
+
+<tr>
+    <td>Windows Metafile (WMF)</td>
+    <td>.wmf</td>
+    <td class="text-center">&#x2713;</td>
+    <td class="text-center"></td>
+</tr>
+
+<tr>
+    <td>Device Independent Bitmap (DIB)</td>
+    <td>.dib</td>
+    <td class="text-center">&#x2713;</td>
+    <td class="text-center">&#x2713;</td>
+</tr>
+
+<tr>
+    <td>Windows Icon (ICO)</td>
+    <td>.ico</td>
+    <td class="text-center">&#x2713;</td>
+    <td class="text-center">&#x2713;</td>
+</tr>
+
+<tr>
+    <td>Truevision Graphics Adapter (TARGA)</td>
+    <td>.tga</td>
+    <td class="text-center">&#x2713;</td>
+    <td class="text-center">&#x2713;</td>
+</tr>
+
+<tr>
+    <td>Adobe Photoshop Document (PSD)</td>
+    <td>.psd, .psb</td>
+    <td class="text-center">&#x2713;</td>
+    <td class="text-center">&#x2713;</td>
+</tr>
+
+<tr>
+    <th colspan="5">Scanner Image Formats:</th>
+</tr>
+
+<tr>
+    <td>Tagged Image File Format (TIFF)</td>
+    <td>.tif, .tiff, .tff</td>
+    <td class="text-center">&#x2713;</td>
+    <td class="text-center">&#x2713;</td>
+</tr>
+
+<tr>
+    <th colspan="5">Vector Image Formats:</th>
+</tr>
+
+<tr>
+    <td>Scalable Vector Graphics (SVG)</td>
+    <td>.svg</td>
+    <td class="text-center">&#x2713;</td>
+    <td class="text-center">&#x2713;</td>
+</tr>
+
+<tr>
+    <td>Windows Enhanced Metafile (EMF)</td>
+    <td>.emf</td>
+    <td class="text-center">&#x2713;</td>
+    <td class="text-center"></td>
+</tr>
+
+<tr>
+    <th colspan="5">Camera Image Formats:</th>
+</tr>
+
+<tr>
+    <td>Adobe Digital Negative (Leica)</td>
+    <td>.dng</td>
+    <td class="text-center">&#x2713;</td>
+    <td class="text-center"></td>
+</tr>
+
+<tr>
+    <td>Sony Alpha Raw Image Format</td>
+    <td>.arw</td>
+    <td class="text-center">&#x2713;</td>
+    <td class="text-center"></td>
+</tr>
+
+<tr>
+    <td>Sony Raw Format</td>
+    <td>.sr2, .srf</td>
+    <td class="text-center">&#x2713;</td>
+    <td class="text-center"></td>
+</tr>
+
+<tr>
+    <td>Canon Digital Camera Raw Image Format</td>
+    <td>.cr2, .crw</td>
+    <td class="text-center">&#x2713;</td>
+    <td class="text-center"></td>
+</tr>
+
+<tr>
+    <td>Nikon Digital SLR Camera Raw Image File</td>
+    <td>.nef, .nrw</td>
+    <td class="text-center">&#x2713;</td>
+    <td class="text-center"></td>
+</tr>
+
+<tr>
+    <td>Fuji CCD-RAW Graphic File</td>
+    <td>.raf</td>
+    <td class="text-center">&#x2713;</td>
+    <td class="text-center"></td>
+</tr>
+
+<tr>
+    <td>Olympus Digital Camera Raw Image File</td>
+    <td>.orf</td>
+    <td class="text-center">&#x2713;</td>
+    <td class="text-center"></td>
+</tr>
+
+<tr>
+    <td>Pentax Electronic File</td>
+    <td>.pef</td>
+    <td class="text-center">&#x2713;</td>
+    <td class="text-center"></td>
+</tr>
+
+<tr>
+    <td>Kodak Digital Camera Raw Image Format</td>
+    <td>.kdc</td>
+    <td class="text-center">&#x2713;</td>
+    <td class="text-center"></td>
+</tr>
+
+<tr>
+    <td>Kodak Digital Camera Raw Image Format</td>
+    <td>.dcr</td>
+    <td class="text-center">&#x2713;</td>
+    <td class="text-center"></td>
+</tr>
+
+<tr>
+    <td>Minolta/Konica Minolta Raw Image File</td>
+    <td>.mrw</td>
+    <td class="text-center">&#x2713;</td>
+    <td class="text-center"></td>
+</tr>
+
+<tr>
+    <td>Epson RAW Format</td>
+    <td>.erf</td>
+    <td class="text-center">&#x2713;</td>
+    <td class="text-center"></td>
+</tr>
+
+<tr>
+    <td>Panasonic Lumix Raw Image</td>
+    <td>.rw2</td>
+    <td class="text-center">&#x2713;</td>
+    <td class="text-center"></td>
+</tr>
+
+<tr>
+    <td>Samsung Raw Format</td>
+    <td>.srw</td>
+    <td class="text-center">&#x2713;</td>
+    <td class="text-center"></td>
+</tr>
+
+<tr>
+    <td>Sigma Camera RAW Picture File</td>
+    <td>.x3f</td>
+    <td class="text-center">&#x2713;</td>
+    <td class="text-center"></td>
+</tr>
+
+<tr>
+    <td>Mamiya Raw Image File</td>
+    <td>.mef</td>
+    <td class="text-center">&#x2713;</td>
+    <td class="text-center"></td>
+</tr>
+
+<tr>
+    <td>Camera Raw Image File</td>
+    <td>.raw</td>
+    <td class="text-center">&#x2713;</td>
+    <td class="text-center"></td>
+</tr>
+
+<tr>
+    <th colspan="5">Totals:</th>
+</tr>
+<tr>
+    <td>31</td>
+    <td>48</td>
+    <td class="text-center">31</td>
+    <td class="text-center">12</td>
+</tr>
+</tbody>
+</table>
+
+
 ### To use ImageUltimate in an ASP.NET MVC Project, do the following in Visual Studio:
 
 1.  Add references to ImageUltimate assemblies. There are two ways to perform this:

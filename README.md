@@ -15,89 +15,19 @@ ImageUltimate is the fastest and easiest ASP.NET Image Resizer which supports bo
 
 ### Features:
 
+*  Can load and save many image file formats (raster, vector and camera raw).
+
 *   Provides a fluent interface for easily chaining image manipulation commands.
 
-*   Processes images stripe by stripe so avoids keeping a full sized bitmap in RAM. This means minimal memory usage and the ability to process very large images in a fast manner.
-
-*   Vastly faster (10x) than System.Drawing namespace and optimized specifically for web use.
-
-*   Can load these image file formats:
-
-    *   Jpeg (Joint Photographic Experts Group)
-
-    *   Png (Portable Network Graphics)
-
-    *   Gif (Graphics Interchange Format)
-
-    *   WebP (Google's Image Format)
-
-    *   Bmp (Bitmap Picture)
-
-    *   Tiff (Tagged Image File Format)
-
-    *   Tga (Truevision Graphics Adapter)
-
-    *   Eps (Encapsulated PostScript) - TIFF Preview only
-
-    *   Psd (Photoshop Document) and Psb (Photoshop Large Document Format)
-
-    *   Raw (Digital Camera Image Formats):
-
-        *   dng (Adobe)
-
-        *   arw, srf, sr2 (Sony)
-
-        *   cr2 (Canon)
-
-        *   nef, nrw (Nikon)
-
-        *   raf (Fuji)
-
-        *   orf (Olympus)
-
-        *   pef (Pentax)
-
-        *   kdc, dcr (Kodak)
-
-        *   mrw (Minolta)
-
-        *   erf (Epson)
-
-        *   rw2 (Panasonic)
-
-        *   dng (Leica)
-
-        *   srw (Samsung)
-
-        *   x3f (Sigma)
-
-*   Can save these image file formats:
-
-    *   Jpeg (Joint Photographic Experts Group)
-
-    *   Png (Portable Network Graphics)
-
-    *   Gif (Graphics Interchange Format)
-
-    *   WebP (Google's Image Format)
-
-    *   Bmp (Bitmap Picture)
-
-    *   Tiff (Tagged Image File Format)
-
-    *   Tga (Truevision Graphics Adapter)
-
-    *   Eps (Encapsulated PostScript)
-
-    *   Pdf (Portable Document Format)
+*   Vastly faster (10x) than System.Drawing namespace and optimized specifically for web use. Minimal memory usage and the ability to process very large images in a fast manner.
 
 *   Provides detailed information about an image file like format, size, DPI, pixel format and metadata like EXIF and IPTC.
 
 *   Fast thumbnail generation, smartly looks for a EXIF thumbnail, removes black stripes above and below it and resizes it down further if needed.
 
-*   Provides these image transforms: Resize, ResizeWidth, ResizeHeight, Crop, CropBorders, Rotate, Flip
+*   Provides these image transforms: Resize, LiquidResize (seam carving), Crop, TrimBorders, Rotate, Flip.
 
-*   Provides these image color and tone corrections: Brightness, BrightnessAuto, Contrast, ContrastAuto, BrightnessContrast
+*   Provides these image color/tone corrections and filters: Brightness, Contrast, Enhance, Blur, Sharpen.
 
 *   Caches generated images both on server and browser with a smart versioning algorithm. A unique and browser-cacheable url is generated according to the chained commands and whenever you change these commands (or modify the source image externally), the url will vary and this will cause browser to automatically detect changes (no need to press F5).
 

@@ -51,7 +51,7 @@ ImageUltimate is the fastest and easiest ASP.NET Image Resizer which supports bo
 <tbody>
 
 <tr>
-    <th colspan="5">Raster Image Formats:</th>
+    <th colspan="5" align="left">Raster Image Formats:</th>
 </tr>
 
 <tr>
@@ -132,7 +132,7 @@ ImageUltimate is the fastest and easiest ASP.NET Image Resizer which supports bo
 </tr>
 
 <tr>
-    <th colspan="5">Scanner Image Formats:</th>
+    <th colspan="5" align="left">Scanner Image Formats:</th>
 </tr>
 
 <tr>
@@ -143,7 +143,7 @@ ImageUltimate is the fastest and easiest ASP.NET Image Resizer which supports bo
 </tr>
 
 <tr>
-    <th colspan="5">Vector Image Formats:</th>
+    <th colspan="5" align="left">Vector Image Formats:</th>
 </tr>
 
 <tr>
@@ -161,7 +161,7 @@ ImageUltimate is the fastest and easiest ASP.NET Image Resizer which supports bo
 </tr>
 
 <tr>
-    <th colspan="5">Camera Image Formats:</th>
+    <th colspan="5" align="left">Camera Image Formats:</th>
 </tr>
 
 <tr>
@@ -284,7 +284,7 @@ ImageUltimate is the fastest and easiest ASP.NET Image Resizer which supports bo
 </tr>
 
 <tr>
-    <th colspan="5">Totals:</th>
+    <th colspan="5" align="left">Totals:</th>
 </tr>
 <tr>
     <td>31</td>

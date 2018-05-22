@@ -1,0 +1,42 @@
+﻿@using GleamTech.AspNet.Core
+@using GleamTech.Examples
+@using GleamTech.ImageUltimate
+@{
+    var exampleExplorer = new ExampleExplorer
+    {
+        DisplayMode = GleamTech.AspNet.UI.DisplayMode.Viewport,
+        NavigationTitle = "ImageUltimate Examples",
+        VersionTitle = "v" + ImageUltimateConfiguration.AssemblyInfo.FileVersion,
+        Examples = new ExampleBase[]
+        {
+            new Example
+            {
+                Title = "Overview",
+                Url = "Home/Overview",
+                SourceFiles = new[] {"Views/Home/Overview.cshtml", "Controllers/HomeController.Overview.cs"},
+                DescriptionFile = "Descriptions/Overview.html"
+            },
+            new Example
+            {
+                Title = "Image Processing",
+                Url = "Home/Processing",
+                SourceFiles = new[] { "Views/Home/Processing.cshtml", "Controllers/HomeController.Processing.cs"},
+                DescriptionFile = "Descriptions/Processing.html"
+            }
+        },
+        ExampleProjectName = "ASP.NET MVC (C#)",
+        ExampleProjects = ExamplesConfiguration.LoadExampleProjects("~/App_Data/ExampleProjects.json")
+    };
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>ImageUltimate Examples - ASP.NET MVC (C#)</title>
+
+    @this.RenderHead(exampleExplorer)
+</head>
+<body>
+    @this.RenderBody(exampleExplorer)
+</body>
+</html>

@@ -1,5 +1,5 @@
 # ![ImageUltimate Logo](imageultimate-logo.png) ImageUltimate: ASP.NET Image Resizer
-ImageUltimate is the fastest and easiest ASP.NET Image Resizer which supports both ASP.NET MVC and ASP.NET WebForms web applications/web sites. ImageUltimate can also be used with .NET desktop applications for manipulating several image formats. Let your web site prepare images automagically for you. Save images once and embrace the responsive web.
+ImageUltimate is the fastest and easiest ASP.NET Image Resizer which supports both ASP.NET MVC, ASP.NET Core and ASP.NET WebForms web applications/web sites. ImageUltimate can also be used with .NET desktop applications for manipulating several image formats. Let your web site prepare images automagically for you. Save images once and embrace the responsive web.
 
 - Chain image manipulation commands to get variations in the brink of an eye.
 

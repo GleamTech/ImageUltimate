@@ -53,7 +53,7 @@
       <HintPath>..\packages\GleamTech.Core.3.1.5\lib\net40\GleamTech.Core.dll</HintPath>
     </Reference>
     <Reference Include="GleamTech.ImageUltimate">
-      <HintPath>..\packages\ImageUltimate.3.2.5\lib\net40\GleamTech.ImageUltimate.dll</HintPath>
+      <HintPath>..\packages\ImageUltimate.3.3.0\lib\net40\GleamTech.ImageUltimate.dll</HintPath>
     </Reference>
     <Reference Include="System.Drawing"/>
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">

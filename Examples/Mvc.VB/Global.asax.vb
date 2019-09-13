@@ -2,6 +2,7 @@
 ' visit http://go.microsoft.com/?LinkId=9394802
 Imports System.IO
 Imports GleamTech.ImageUltimate
+Imports GleamTech.AspNet
 
 Public Class MvcApplication
     Inherits System.Web.HttpApplication
@@ -25,10 +26,15 @@ Public Class MvcApplication
         AreaRegistration.RegisterAllAreas()
 
         RegisterRoutes(RouteTable.Routes)
-        
-        Dim licenseFile = Server.MapPath("~/App_Data/License.dat")
-        If File.Exists(licenseFile) Then
-	        ImageUltimateConfiguration.Current.LicenseKey = File.ReadAllText(licenseFile)
+
+        Dim gleamTechConfig = Hosting.ResolvePhysicalPath("~/App_Data/GleamTech.config")
+        If File.Exists(gleamTechConfig) Then
+            GleamTechConfiguration.Current.Load(gleamTechConfig)
+        End If
+
+        Dim imageUltimateConfig = Hosting.ResolvePhysicalPath("~/App_Data/ImageUltimate.config")
+        If File.Exists(imageUltimateConfig) Then
+            ImageUltimateConfiguration.Current.Load(imageUltimateConfig)
         End If
     End Sub
 End Class

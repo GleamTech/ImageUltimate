@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Web;
+using GleamTech.AspNet;
 using GleamTech.ImageUltimate;
 
 namespace GleamTech.ImageUltimateExamples.WebForms.CS
@@ -9,9 +10,13 @@ namespace GleamTech.ImageUltimateExamples.WebForms.CS
     {
         protected void Application_Start(object sender, EventArgs e)
         {
-            var licenseFile = Server.MapPath("~/App_Data/License.dat");
-            if (File.Exists(licenseFile))
-                ImageUltimateConfiguration.Current.LicenseKey = File.ReadAllText(licenseFile);
+            var gleamTechConfig = Hosting.ResolvePhysicalPath("~/App_Data/GleamTech.config");
+            if (File.Exists(gleamTechConfig))
+                GleamTechConfiguration.Current.Load(gleamTechConfig);
+
+            var imageUltimateConfig = Hosting.ResolvePhysicalPath("~/App_Data/ImageUltimate.config");
+            if (File.Exists(imageUltimateConfig))
+                ImageUltimateConfiguration.Current.Load(imageUltimateConfig);
         }
     }
 }

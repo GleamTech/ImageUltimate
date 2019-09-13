@@ -41,9 +41,13 @@ namespace GleamTech.ImageUltimateExamples.AspNetCore.CS
 
             app.UseGleamTech();
 
-            var licenseFile = Hosting.ResolvePhysicalPath("~/App_Data/License.dat");
-            if (File.Exists(licenseFile))
-                ImageUltimateConfiguration.Current.LicenseKey = File.ReadAllText(licenseFile);
+            var gleamTechConfig = Hosting.ResolvePhysicalPath("~/App_Data/GleamTech.config");
+            if (File.Exists(gleamTechConfig))
+                GleamTechConfiguration.Current.Load(gleamTechConfig);
+
+            var imageUltimateConfig = Hosting.ResolvePhysicalPath("~/App_Data/ImageUltimate.config");
+            if (File.Exists(imageUltimateConfig))
+                ImageUltimateConfiguration.Current.Load(imageUltimateConfig);
 
             app.UseStaticFiles();
 

@@ -1,16 +1,22 @@
 ﻿Imports System.IO
 Imports GleamTech.ImageUltimate
+Imports GleamTech.AspNet
 
 Public Class Global_asax
     Inherits System.Web.HttpApplication
 
     Sub Application_Start(ByVal sender As Object, ByVal e As EventArgs)
         ' Fires when the application is started
-        
-        Dim licenseFile = Server.MapPath("~/App_Data/License.dat")
-        If File.Exists(licenseFile) Then
-	        ImageUltimateConfiguration.Current.LicenseKey = File.ReadAllText(licenseFile)
-        End If        
+
+        Dim gleamTechConfig = Hosting.ResolvePhysicalPath("~/App_Data/GleamTech.config")
+        If File.Exists(gleamTechConfig) Then
+            GleamTechConfiguration.Current.Load(gleamTechConfig)
+        End If
+
+        Dim imageUltimateConfig = Hosting.ResolvePhysicalPath("~/App_Data/ImageUltimate.config")
+        If File.Exists(imageUltimateConfig) Then
+            ImageUltimateConfiguration.Current.Load(imageUltimateConfig)
+        End If
     End Sub
 
     Sub Session_Start(ByVal sender As Object, ByVal e As EventArgs)

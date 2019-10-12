@@ -25,10 +25,10 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="GleamTech.Core">
-      <HintPath>..\..\Bin\GleamTech.Core.dll</HintPath>
+      <HintPath>..\..\Bin\net40\GleamTech.Core.dll</HintPath>
     </Reference>
     <Reference Include="GleamTech.ImageUltimate">
-      <HintPath>..\..\Bin\GleamTech.ImageUltimate.dll</HintPath>
+      <HintPath>..\..\Bin\net40\GleamTech.ImageUltimate.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

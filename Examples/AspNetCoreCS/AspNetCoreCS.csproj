@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <AssemblyName>GleamTech.ImageUltimateExamples.AspNetCoreCS</AssemblyName>
+    <RootNamespace>GleamTech.ImageUltimateExamples.AspNetCoreCS</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.9" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="GleamTech.Core" Version="4.0.0" />
+    <PackageReference Include="ImageUltimate" Version="4.0.0" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <_CustomFiles Include="Controllers\**\*" />
+    <_CustomFiles Include="Views\**\*" />
+    <_CustomFiles Include="Descriptions\**\*" />
+    <DotnetPublishFiles Include="@(_CustomFiles)">
+      <DestinationRelativePath>%(Identity)</DestinationRelativePath>
+    </DotnetPublishFiles>
+  </ItemGroup>
+
+</Project>

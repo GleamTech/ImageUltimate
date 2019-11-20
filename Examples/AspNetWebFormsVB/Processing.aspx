@@ -1,5 +1,5 @@
 <%@ Page Language="vb" AutoEventWireup="false" CodeBehind="Processing.aspx.vb" Inherits="GleamTech.ImageUltimateExamples.AspNetWebFormsVB.ProcessingPage" %>
-<%@ Register TagPrefix="GleamTech" Namespace="GleamTech.Examples" Assembly="GleamTech.Core" %>
+<%@ Register TagPrefix="GleamTech" Namespace="GleamTech.Examples" Assembly="GleamTech.Common" %>
 <%@ Import Namespace="GleamTech.ImageUltimate.AspNet.WebForms" %>
 
 <html>

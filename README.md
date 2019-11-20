@@ -16,14 +16,14 @@ ImageUltimate is the fastest and easiest ASP.NET image resizer which supports AS
 
 **Note:** This project contains a fully working version of the product, however without a license key it will run in trial mode. For more information, please see [ImageUltimate: ASP.NET Image Resizer](http://www.gleamtech.com/imageultimate) product page.
 
-## Adding references to ImageUltimate assemblies
+### Adding references to ImageUltimate assemblies
 https://docs.gleamtech.com/imageultimate/html/adding-references-to-imageultimate-assemblies.htm
 
-## Using ImageUltimate in an ASP.NET Core project:
+### Using ImageUltimate in an ASP.NET Core project:
 https://docs.gleamtech.com/imageultimate/html/using-imageultimate-in-an-asp-net-core-project.htm
 
-## Using ImageUltimate in an ASP.NET MVC project:
+### Using ImageUltimate in an ASP.NET MVC project:
 https://docs.gleamtech.com/imageultimate/html/using-imageultimate-in-an-asp-net-mvc-project.htm
 
-## Using ImageUltimate in an ASP.NET WebForms project:
+### Using ImageUltimate in an ASP.NET WebForms project:
 https://docs.gleamtech.com/imageultimate/html/using-imageultimate-in-an-asp-net-webforms-project.htm

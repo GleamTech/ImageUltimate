@@ -35,13 +35,13 @@ namespace GleamTech.ImageUltimateExamples.AspNetCoreCS.Controllers
                 model.ImageData.Add("ChannelCount", imageInfo.ChannelCount);
 
                 foreach (var entry in imageInfo.ExifDictionary)
-                    model.ImageExifMetadata.Add(entry.Tag.ToString(), Tuple.Create(entry.Value, entry.Description));
+                    model.ImageExifMetadata.Add(entry.Tag.NameWithGroup, Tuple.Create(entry.Value, entry.Tag.Description));
 
                 if (model.ImageExifMetadata.Count == 0)
                     model.ImageExifMetadata.Add("", Tuple.Create("", ""));
 
                 foreach (var entry in imageInfo.IptcDictionary)
-                    model.ImageIptcMetadata.Add(entry.Tag.ToString(), Tuple.Create(entry.Value, entry.Description));
+                    model.ImageIptcMetadata.Add(entry.Tag.NameWithGroup, Tuple.Create(entry.Value, entry.Tag.Description));
 
                 if (model.ImageIptcMetadata.Count == 0)
                     model.ImageIptcMetadata.Add("", Tuple.Create("", ""));

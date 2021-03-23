@@ -24,7 +24,7 @@ Public Class OverviewPage
 		    ImageData.Add("ChannelCount", imageInfo.ChannelCount)
 
 			For Each entry In imageInfo.ExifDictionary
-			    ImageExifMetadata.Add(entry.Tag.ToString(), Tuple.Create(entry.Value, entry.Description))
+			    ImageExifMetadata.Add(entry.Tag.NameWithGroup, Tuple.Create(entry.Value, entry.Tag.Description))
 			Next
 
 			If ImageExifMetadata.Count = 0 Then
@@ -32,7 +32,7 @@ Public Class OverviewPage
 			End If
 
 			For Each entry In imageInfo.IptcDictionary
-			    ImageIptcMetadata.Add(entry.Tag.ToString(), Tuple.Create(entry.Value, entry.Description))
+			    ImageIptcMetadata.Add(entry.Tag.NameWithGroup, Tuple.Create(entry.Value, entry.Tag.Description))
 			Next
 
 			If ImageIptcMetadata.Count = 0 Then

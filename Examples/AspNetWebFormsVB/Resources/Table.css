@@ -30,6 +30,12 @@ table.info tr:nth-child(even)
     background-color: #f2f2f2
 }
 
+table.info td:nth-child(n + 3) 
+{
+    /*e.g for description column and beyond*/
+    max-width: 200px;
+}
+
 table.image img 
 {
     background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHAAAABwAQMAAAD8LmYIAAAABlBMVEXMzMz////TjRV2AAAAIklEQVQ4y2P4z4AMGejGZRggi0f9O+rfUf+O+nfUv4PSvwAQPQ0eTjYYlQAAAABJRU5ErkJggg==');

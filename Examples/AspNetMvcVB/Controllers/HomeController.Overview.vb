@@ -29,7 +29,7 @@ Namespace Controllers
                 model.ImageData.Add("ChannelCount", imageInfo.ChannelCount)
 
                 For Each entry In imageInfo.ExifDictionary
-                    model.ImageExifMetadata.Add(entry.Tag.ToString(), Tuple.Create(entry.Value, entry.Description))
+                    model.ImageExifMetadata.Add(entry.Tag.NameWithGroup, Tuple.Create(entry.Value, entry.Tag.Description))
                 Next
 
                 If model.ImageExifMetadata.Count = 0 Then
@@ -37,7 +37,7 @@ Namespace Controllers
                 End If
 
                 For Each entry In imageInfo.IptcDictionary
-                    model. ImageIptcMetadata.Add(entry.Tag.ToString(), Tuple.Create(entry.Value, entry.Description))
+                    model. ImageIptcMetadata.Add(entry.Tag.NameWithGroup, Tuple.Create(entry.Value, entry.Tag.Description))
                 Next
 
                 If model.ImageIptcMetadata.Count = 0 Then

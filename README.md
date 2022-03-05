@@ -2,7 +2,7 @@
 # ImageUltimate: ASP.NET Image Resizer
 [![GleamTech.ImageUltimate Nuget](https://img.shields.io/nuget/v/GleamTech.ImageUltimate)](https://www.nuget.org/packages/GleamTech.ImageUltimate/ "GleamTech.ImageUltimate Nuget")
 
-ImageUltimate is the fastest and easiest ASP.NET image resizer which supports ASP.NET Core 2.0+, ASP.NET MVC 3+ and ASP.NET WebForms 4+ web applications/web sites. ImageUltimate can also be used with .NET Core 2.0+ and .NET Framework 4.0+ console/desktop applications for conversion between several image formats.
+ImageUltimate is the fastest and easiest ASP.NET image resizer which supports ASP.NET Core 2.0+, ASP.NET MVC 3.0+ and ASP.NET WebForms 4.6.1+ web applications/web sites. ImageUltimate can also be used with .NET Core 2.0+ and .NET Framework 4.6.1+ console/desktop applications for conversion between several image formats.
 
 - Chain image manipulation commands to get variations in the brink of an eye.
 

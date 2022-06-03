@@ -30,3 +30,6 @@ https://docs.gleamtech.com/imageultimate/html/using-imageultimate-in-an-asp-net-
 
 ### Using ImageUltimate in an ASP.NET WebForms project:
 https://docs.gleamtech.com/imageultimate/html/using-imageultimate-in-an-asp-net-webforms-project.htm
+
+### Showcase videos:
+[![ASP NET Image Resizer](https://i.ytimg.com/vi/k9-GVJDxBmI/maxresdefault.jpg)](https://youtu.be/k9-GVJDxBmI "ASP NET Image Resizer")

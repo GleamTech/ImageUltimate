@@ -65,10 +65,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="GleamTech.Common">
-      <HintPath>..\packages\GleamTech.Common.5.5.0\lib\net461\GleamTech.Common.dll</HintPath>
+      <HintPath>..\packages\GleamTech.Common.5.5.2\lib\net461\GleamTech.Common.dll</HintPath>
     </Reference>
     <Reference Include="GleamTech.ImageUltimate">
-      <HintPath>..\packages\GleamTech.ImageUltimate.5.5.0\lib\net461\GleamTech.ImageUltimate.dll</HintPath>
+      <HintPath>..\packages\GleamTech.ImageUltimate.5.6.0\lib\net461\GleamTech.ImageUltimate.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />

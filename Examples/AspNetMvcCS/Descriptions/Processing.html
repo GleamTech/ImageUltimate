@@ -1,0 +1,17 @@
+﻿<p>ImageTask class allows you to process a source image in a chained manner and save the resulting image(s): </p>
+<p>
+	<pre style="font-family:Cascadia Mono;font-size:13px;color:black;background:white;">	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:green;">//Get&nbsp;EXIF&nbsp;thumbnail&nbsp;if&nbsp;exists&nbsp;or&nbsp;resize:</span>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue;">using</span>&nbsp;(<span style="color:blue;">var</span>&nbsp;<span style="color:#1f377f;">imageTask</span>&nbsp;=&nbsp;<span style="color:blue;">new</span>&nbsp;ImageTask(<span style="color:maroon;">@&quot;C:\Input\Picture1.jpg&quot;</span>))
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;imageTask.Thumbnail(160).Save(<span style="color:maroon;">@&quot;C:\Output\Thumbnail1.jpg&quot;</span>);
+ 
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:green;">//Just&nbsp;resize:</span>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue;">using</span>&nbsp;(<span style="color:blue;">var</span>&nbsp;<span style="color:#1f377f;">imageTask</span>&nbsp;=&nbsp;<span style="color:blue;">new</span>&nbsp;ImageTask(<span style="color:maroon;">@&quot;C:\Input\Picture1.jpg&quot;</span>))
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;imageTask.ResizeWidth(200).Save(<span style="color:maroon;">@&quot;C:\Output\Picture2.jpg&quot;</span>);
+ 
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:green;">//Using&nbsp;Undo&nbsp;for&nbsp;multiple&nbsp;outputs:</span>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue;">using</span>&nbsp;(<span style="color:blue;">var</span>&nbsp;<span style="color:#1f377f;">imageTask</span>&nbsp;=&nbsp;<span style="color:blue;">new</span>&nbsp;ImageTask(<span style="color:maroon;">@&quot;C:\Input\Picture1.jpg&quot;</span>,&nbsp;enableUndo:&nbsp;<span style="color:blue;">true</span>))
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;imageTask.ResizeWidth(200).Save(<span style="color:maroon;">@&quot;C:\Output\Picture2.jpg&quot;</span>)
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.Undo().ResizeHeight(400).Rotate(90).Save(<span style="color:maroon;">@&quot;C:\Output\Picture3.png&quot;</span>)
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.UndoAll().Save(outputStream,&nbsp;ImageFormat.Png);
+	</pre>
+</p>

@@ -1,0 +1,19 @@
+﻿<p>ImageTask class allows you to process a source image in a chained manner and save the resulting image(s): </p>
+<p>
+	<pre style="font-family:Cascadia Mono;font-size:13px;color:black;background:white;">	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:green;">&#39;Get&nbsp;EXIF&nbsp;thumbnail&nbsp;if&nbsp;exists&nbsp;or&nbsp;resize:</span>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue;">Using</span>&nbsp;imageTask&nbsp;<span style="color:blue;">As</span>&nbsp;<span style="color:blue;">New</span>&nbsp;ImageTask(<span style="color:#a31515;">&quot;C:\Pictures\Picture1.jpg&quot;</span>)
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;imageTask.Thumbnail(160).Save(<span style="color:#a31515;">&quot;C:\Output\Thumbnail1.jpg&quot;</span>)
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue;">End</span>&nbsp;<span style="color:blue;">Using</span>
+ 
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:green;">&#39;Just&nbsp;resize:</span>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue;">Using</span>&nbsp;imageTask&nbsp;<span style="color:blue;">As</span>&nbsp;<span style="color:blue;">New</span>&nbsp;ImageTask(<span style="color:#a31515;">&quot;C:\Pictures\Picture1.jpg&quot;</span>)
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;imageTask.ResizeWidth(200).Save(<span style="color:#a31515;">&quot;C:\Output\Picture2.jpg&quot;</span>)
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue;">End</span>&nbsp;<span style="color:blue;">Using</span>
+ 
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:green;">&#39;Using&nbsp;Undo&nbsp;for&nbsp;multiple&nbsp;outputs:</span>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue;">Using</span>&nbsp;imageTask&nbsp;<span style="color:blue;">As</span>&nbsp;<span style="color:blue;">New</span>&nbsp;ImageTask(<span style="color:#a31515;">&quot;C:\Pictures\Picture1.jpg&quot;</span>,&nbsp;enableUndo:=<span style="color:blue;">True</span>)
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;imageTask.ResizeWidth(200).Save(<span style="color:#a31515;">&quot;C:\Output\Picture2.jpg&quot;</span>)&nbsp;_
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.Undo().ResizeHeight(400).Rotate(90).Save(<span style="color:#a31515;">&quot;C:\Output\Picture3.png&quot;</span>)&nbsp;_
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.UndoAll().Save(outputStream,&nbsp;ImageFormat.Png)
+	</pre>
+</p>

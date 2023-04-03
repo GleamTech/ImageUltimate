@@ -24,7 +24,11 @@ namespace GleamTech.ImageUltimateExamples.AspNetCoreCS
         {
             services.AddControllersWithViews();
 
+
+            //----------------------
+            //Add GleamTech to the ASP.NET Core services container.
             services.AddGleamTech();
+            //----------------------
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -40,15 +44,22 @@ namespace GleamTech.ImageUltimateExamples.AspNetCoreCS
             }
 
 
-            app.UseGleamTech();
+			//----------------------
+			//Register GleamTech to the ASP.NET Core HTTP request pipeline.
+			app.UseGleamTech(() =>
+			{
+                //The below custom config file loading is only for our demo publishing purpose:
 
-            var gleamTechConfig = Hosting.ResolvePhysicalPath("~/App_Data/GleamTech.config");
-            if (File.Exists(gleamTechConfig))
-                GleamTechConfiguration.Current.Load(gleamTechConfig);
+	            var gleamTechConfig = Hosting.ResolvePhysicalPath("~/App_Data/GleamTech.config");
+	            if (File.Exists(gleamTechConfig))
+	                GleamTechConfiguration.Current.Load(gleamTechConfig);
 
-            var imageUltimateConfig = Hosting.ResolvePhysicalPath("~/App_Data/ImageUltimate.config");
-            if (File.Exists(imageUltimateConfig))
-                ImageUltimateConfiguration.Current.Load(imageUltimateConfig);
+	            var imageUltimateConfig = Hosting.ResolvePhysicalPath("~/App_Data/ImageUltimate.config");
+	            if (File.Exists(imageUltimateConfig))
+	                ImageUltimateConfiguration.Current.Load(imageUltimateConfig);
+			});
+            //----------------------
+
 
             app.UseStaticFiles();
 

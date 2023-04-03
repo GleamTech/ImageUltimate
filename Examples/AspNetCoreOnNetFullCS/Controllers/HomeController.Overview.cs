@@ -26,8 +26,8 @@ namespace GleamTech.ImageUltimateExamples.AspNetCoreOnNetFullCS.Controllers
                 model.ImageData.Add("Format", imageInfo.Format);
                 model.ImageData.Add("Width", imageInfo.Width);
                 model.ImageData.Add("Height", imageInfo.Height);
-                model.ImageData.Add("DpiX", imageInfo.DpiX);
-                model.ImageData.Add("DpiY", imageInfo.DpiY);
+                model.ImageData.Add("ResolutionX", imageInfo.ResolutionX);
+                model.ImageData.Add("ResolutionY", imageInfo.ResolutionY);
                 model.ImageData.Add("ColorSpace", imageInfo.ColorSpace);
                 model.ImageData.Add("ColorType", imageInfo.ColorType);
                 model.ImageData.Add("BitDepth", imageInfo.BitDepth);

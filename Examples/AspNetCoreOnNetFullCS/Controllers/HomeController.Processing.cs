@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq.Expressions;
@@ -85,7 +85,8 @@ namespace GleamTech.ImageUltimateExamples.AspNetCoreOnNetFullCS.Controllers
             for (var i = 0; i < TaskExpressions.Length; i++)
             {
                 items.Add(
-                    new SelectListItem { 
+                    new SelectListItem
+                    {
                         Text = ExpressionStringBuilder.ToString(TaskExpressions[i]),
                         Value = i.ToString(),
                         Selected = (i == selectedValue)

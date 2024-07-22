@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using GleamTech.ImageUltimateExamples.AspNetCoreCS.Models;
 using GleamTech.Examples;
 using GleamTech.ImageUltimate;

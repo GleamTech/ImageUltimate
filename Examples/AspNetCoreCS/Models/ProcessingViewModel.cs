@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using GleamTech.Examples;
 using GleamTech.ImageUltimate.AspNet;

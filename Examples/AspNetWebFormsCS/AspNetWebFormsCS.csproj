@@ -51,10 +51,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="GleamTech.Common">
-      <HintPath>..\packages\GleamTech.Common.6.4.7\lib\net472\GleamTech.Common.dll</HintPath>
+      <HintPath>..\packages\GleamTech.Common.6.5.0\lib\net472\GleamTech.Common.dll</HintPath>
     </Reference>
     <Reference Include="GleamTech.ImageUltimate">
-      <HintPath>..\packages\GleamTech.ImageUltimate.6.5.1\lib\net472\GleamTech.ImageUltimate.dll</HintPath>
+      <HintPath>..\packages\GleamTech.ImageUltimate.6.5.2\lib\net472\GleamTech.ImageUltimate.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data.DataSetExtensions" />

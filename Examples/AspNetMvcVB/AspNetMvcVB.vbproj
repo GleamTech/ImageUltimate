@@ -31,7 +31,6 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\</OutputPath>
-    <DocumentationFile>GleamTech.ImageUltimateExamples.AspNetMvcVB.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
     <FilesToIncludeForPublish>AllFilesInTheProject</FilesToIncludeForPublish>
   </PropertyGroup>
@@ -42,16 +41,15 @@
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\</OutputPath>
-    <DocumentationFile>GleamTech.ImageUltimateExamples.AspNetMvcVB.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
     <FilesToIncludeForPublish>AllFilesInTheProject</FilesToIncludeForPublish>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="GleamTech.Common">
-      <HintPath>..\packages\GleamTech.Common.7.0.0\lib\net472\GleamTech.Common.dll</HintPath>
+      <HintPath>..\packages\GleamTech.Common.7.1.0\lib\net472\GleamTech.Common.dll</HintPath>
     </Reference>
     <Reference Include="GleamTech.ImageUltimate">
-      <HintPath>..\packages\GleamTech.ImageUltimate.7.0.0\lib\net472\GleamTech.ImageUltimate.dll</HintPath>
+      <HintPath>..\packages\GleamTech.ImageUltimate.7.1.0\lib\net472\GleamTech.ImageUltimate.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -175,13 +173,12 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
   </ItemGroup>
-  <ItemGroup>
+  <ItemGroup Condition="'$(DisableWildcardExpansionHack)' != 'true'">
     <Content Include="App_Data\**\*" />
     <Content Include="App_GlobalResources\**\*" />
+    <Content Include="Descriptions\**\*" />
     <Content Include="Models\**\*" />
     <Content Include="Views\**\*" />
-    <Content Include="Descriptions\**\*" />
-    <Content Include="Resources\**\*" />
   </ItemGroup>
   <ItemGroup>
     <Import Include="System.Web.Mvc" />
@@ -217,7 +214,8 @@
           <IISUrl>http://localhost:5213/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
-          <CustomServerUrl></CustomServerUrl>
+          <CustomServerUrl>
+          </CustomServerUrl>
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>

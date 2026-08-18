@@ -51,10 +51,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="GleamTech.Common">
-      <HintPath>..\packages\GleamTech.Common.7.2.0\lib\net472\GleamTech.Common.dll</HintPath>
+      <HintPath>..\packages\GleamTech.Common.7.4.0\lib\net472\GleamTech.Common.dll</HintPath>
     </Reference>
     <Reference Include="GleamTech.ImageUltimate">
-      <HintPath>..\packages\GleamTech.ImageUltimate.7.2.0\lib\net472\GleamTech.ImageUltimate.dll</HintPath>
+      <HintPath>..\packages\GleamTech.ImageUltimate.7.4.0\lib\net472\GleamTech.ImageUltimate.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -83,7 +83,7 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="Default.aspx" />    
+    <Content Include="Default.aspx" />
   </ItemGroup>
   <ItemGroup Condition="'$(DisableWildcardExpansionHack)' != 'true'">
     <Compile Include="Global.asax.cs">
@@ -101,6 +101,7 @@
   <ItemGroup>
     <Content Include="Overview.aspx" />
     <Content Include="Processing.aspx" />
+    <Content Include="Resources\Table.css" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Overview.aspx.cs">

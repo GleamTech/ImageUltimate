@@ -1,15 +1,13 @@
-using System;
-using System.Collections.Generic;
-using System.Drawing;
 using System.Linq.Expressions;
 using GleamTech.AspNet;
+using GleamTech.Drawing;
 using GleamTech.ImageUltimateExamples.AspNetCoreCS.Models;
 using GleamTech.Examples;
-using GleamTech.ImageUltimate;
 using GleamTech.ImageUltimate.AspNet;
 using GleamTech.Util;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using ResizeMode = GleamTech.ImageUltimate.ResizeMode;
 
 namespace GleamTech.ImageUltimateExamples.AspNetCoreCS.Controllers
 {

@@ -1,10 +1,10 @@
-﻿using System;
-using System.Drawing;
+using System;
 using System.Linq.Expressions;
 using System.Web.UI.WebControls;
-using GleamTech.ImageUltimate;
+using GleamTech.Drawing;
 using GleamTech.ImageUltimate.AspNet;
 using GleamTech.Util;
+using ResizeMode = GleamTech.ImageUltimate.ResizeMode;
 
 namespace GleamTech.ImageUltimateExamples.AspNetWebFormsCS
 {

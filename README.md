@@ -17,16 +17,16 @@ Let your web site prepare images automagically for you. Save images once and emb
 https://demos.gleamtech.com/imageultimate/
 
 ### Adding references to ImageUltimate assemblies:
-https://docs.gleamtech.com/imageultimate/html/adding-references-to-imageultimate-assemblies.htm
+https://docs.gleamtech.com/imageultimate/articles/getting-started/adding-references-to-imageultimate-assemblies.html
 
 ### Using ImageUltimate in an ASP.NET Core project:
-https://docs.gleamtech.com/imageultimate/html/using-imageultimate-in-an-asp-net-core-project.htm
+https://docs.gleamtech.com/imageultimate/articles/getting-started/using-imageultimate-in-an-asp-net-core-project.html
 
 ### Using ImageUltimate in an ASP.NET MVC project:
-https://docs.gleamtech.com/imageultimate/html/using-imageultimate-in-an-asp-net-mvc-project.htm
+https://docs.gleamtech.com/imageultimate/articles/getting-started/using-imageultimate-in-an-asp-net-mvc-project.html
 
 ### Using ImageUltimate in an ASP.NET WebForms project:
-https://docs.gleamtech.com/imageultimate/html/using-imageultimate-in-an-asp-net-webforms-project.htm
+https://docs.gleamtech.com/imageultimate/articles/getting-started/using-imageultimate-in-an-asp-net-webforms-project.html
 
 ### Showcase videos:
 [![ASP NET Image Resizer](https://i.ytimg.com/vi/k9-GVJDxBmI/maxresdefault.jpg)](https://youtu.be/k9-GVJDxBmI "ASP NET Image Resizer")
